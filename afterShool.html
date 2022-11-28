@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="utf-8">
+    <title>Show Hide Elements Using Checkboxes</title>
+  
+    <!--CSS stylesheet-->
+    <style>
+		.afterClassText {
+			font-size: 100px;
+			font-family: 標楷體;
+		}
+		.afterClassDIV {
+			width: auto;
+			height: 500px;
+            border: 1px solid black;
+			border-width: 10px;
+        }
+		
+        .box {
+            color: #fff;
+			font-size: 160px;
+			border-width: thick;
+            display: none;
+			margin-top: 20px;
+        }
+  
+        .b1a, .b1b, .b1c {
+            background: red;
+        }
+  
+        .b2a, .b2b, .b2c {
+            background: green;
+        }
+  
+        .b3a, .b3b, .b3c, .b3d {
+            background: blue;
+        }
+  
+        label {
+            margin-right: 15px;
+        }
+    </style>
+  
+    <!--import jQuery cdn-->
+    <script src=
+        "https://code.jquery.com/jquery-1.12.4.min.js">
+    </script>
+  
+    <script>
+  
+        // jQuery functions to show and hide divisions
+        $(document).ready(function () {
+            $('input[type="checkbox"]').click(function () {
+                var inputValue = $(this).attr("value");
+                $("." + inputValue).toggle();
+            });
+        });
+    </script>
+</head>
+  
+<body>
+
+	<div>
+		<!--checkboxes-->
+		<label>
+			<input type="checkbox" name="colorCheckbox" value="b1a">1A
+		</label>
+
+		<label>
+			<input type="checkbox" name="colorCheckbox" value="b1b">1B
+		</label>
+
+		<label>
+			<input type="checkbox" name="colorCheckbox" value="b1c">1C
+		</label>
+
+		<label>
+			<input type="checkbox" name="colorCheckbox" value="b2a">2A
+		</label>
+
+		<label>
+			<input type="checkbox" name="colorCheckbox" value="b2b">2B
+		</label>
+
+		<label>
+			<input type="checkbox" name="colorCheckbox" value="b2c">2C
+		</label>
+
+		<label>
+			<input type="checkbox" name="colorCheckbox" value="b3a">3A
+		</label>
+
+		<label>
+			<input type="checkbox" name="colorCheckbox" value="b3b">3B
+		</label>
+
+		<label>
+			<input type="checkbox" name="colorCheckbox" value="b3c">3C
+		</label>
+
+		<label>
+			<input type="checkbox" name="colorCheckbox" value="b3d">3D
+		</label>
+	</div>
+
+	<span class="afterClassText">已放學班別：</span>
+	<!--Divisions to be shown and hidden-->
+	<div class="afterClassDIV">
+		<span class="b1a box">1A</span>
+		<span class="b1b box">1B</span>
+		<span class="b1c box">1C</span>
+		<span class="b2a box">2A</span>
+		<span class="b2b box">2B</span>
+		<span class="b2c box">2C</span>
+		<span class="b3a box">3A</span>
+		<span class="b3b box">3B</span>
+		<span class="b3c box">3C</span>
+		<span class="b3d box">3D</span>
+	</div>
+</body>
+  
+</html>
